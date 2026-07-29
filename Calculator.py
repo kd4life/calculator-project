@@ -135,11 +135,15 @@ if __name__ == "__main__":
                 ).strip().lower()
 
             if action in ('result', '1', 'continue', 'r'):
-                next_num = convert_number(input("Enter the next number: "))
-              
+                next_num_input = input("Enter the next number: ").strip().lower()
+                if next_num_input in ('exit', 'e'):
+                    action = 'exit'
+                    break
+                next_num = convert_number(next_num_input)
                 if next_num is None:
                     print('Invalid input. Please enter a valid input.')
                     continue
+
                 result = calculator(result, next_num)
                 if result == 'Undefined':
                     break
