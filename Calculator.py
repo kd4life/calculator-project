@@ -52,7 +52,10 @@ def calculator(num1, num2):
             
 
         elif selection in ('6', '^', 'exponentiation', 'power', 'exp', 'pwr'):
-            result = num1 ** num2
+            if num1 == 0 and num2 < 0:
+                result = 'Undefined' 
+            else:
+                result = num1 ** num2
             
 
         elif selection in ('7', '//', 'floor division', 'floordiv'):
