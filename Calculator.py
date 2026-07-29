@@ -57,14 +57,14 @@ def calculator(num1, num2):
 
         elif selection in ('7', '//', 'floor division', 'floordiv'):
             if num2 == 0:
-                print('Undefined')
+                result ='Undefined'
             else:
                 result = num1 // num2
                 
 
         elif selection in ('8', 'm%', 'modulus', 'mod'):
             if num2 == 0:
-                print('ZeroDivisionError')
+                result = 'Undefined'
             else:
                 result = num1 % num2
                 
