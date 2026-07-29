@@ -88,7 +88,7 @@ if __name__ == "__main__":
     print('Hello')
         
     #decimal_words = ['point', 'and','dot', 'decimal', 'fraction', 'decimal point', 'decimal fraction', 'decimal dot', 'decimal and', 'decimal and point', 'decimal and fraction', 'decimal and dot', 'decimal and decimal', 'decimal and decimal point', 'decimal and decimal fraction', 'decimal and decimal dot', 'decimal and decimal and', 'decimal and decimal and point', 'decimal and decimal and fraction', 'decimal and decimal and dot','tenths', 'hundredths', 'thousandths']
-    word_to_num = {'zero': 0, 'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10}
+    word_to_num = {'zero': 0, 'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10, 'eleven': 11, 'twelve': 12, 'thirteen': 13, 'fourteen': 14, 'fifteen': 15, 'sixteen': 16, 'seventeen': 17, 'eighteen': 18, 'nineteen': 19}
     
     
 
