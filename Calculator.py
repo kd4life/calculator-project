@@ -90,9 +90,19 @@ if __name__ == "__main__":
     
 
     while True:
-        
-        num_1 = convert_number(input("Enter the first number: "))
-        num_2 = convert_number(input("Enter the second number: "))
+
+        num_1_input = input("Enter the first number: ").strip().lower()
+        if num_1_input in ('exit', 'e'):
+            break
+        num_1 = convert_number(num_1_input)
+
+        num_2_input = input("Enter the second number: ").strip().lower()
+        if num_2_input in ('exit', 'e'):
+            break
+        num_2 = convert_number(num_2_input)
+
+        #num_1 = convert_number(input("Enter the first number: "))
+        #num_2 = convert_number(input("Enter the second number: "))
         print(f" iF YOU WANT TO EXIT TYPE 'exit' ")
         
         if num_1 is None or num_2 is None:
