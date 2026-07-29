@@ -105,7 +105,7 @@ if __name__ == "__main__":
 
         print("CHECKPOINT B: calculator returned", result)
 
-        if result is None:
+        if result == 'exit':
             break
 
         while True:
