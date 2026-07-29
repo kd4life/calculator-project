@@ -107,14 +107,11 @@ if __name__ == "__main__":
             print('Invalid input. Please enter a valid input.')
             continue
 
-        
         print(f" iF YOU WANT TO EXIT TYPE 'exit' ")
         
-
         
         result = calculator(num_1, num_2)
-
-        
+ 
 
         if result == 'exit':
             break
@@ -122,10 +119,16 @@ if __name__ == "__main__":
         elif result == 'Undefined':
             continue
 
-        while True:
-            
+        show_current_result = False
 
+        while True:
+
+            if show_current_result:
+                print(f'                The current result is: {result}')
+                show_current_result = False
+            
             action = input(
+
                 """
                 Choose:
                 1. 'Continue with result' (r)
@@ -142,6 +145,7 @@ if __name__ == "__main__":
                 next_num = convert_number(next_num_input)
                 if next_num is None:
                     print('Invalid input. Please enter a valid input.')
+                    show_current_result = True
                     continue
 
                 result = calculator(result, next_num)
