@@ -42,7 +42,7 @@ def calculator(num1, num2):
 
         elif selection in ('4', '/', 'division', 'div'):
             if num2 == 0:
-                print('Undefined')
+                result = 'Undefined'
             else:
                 result = num1 / num2
                 # print(f'The result of {num1} / {num2} is: {result}')
@@ -108,6 +108,9 @@ if __name__ == "__main__":
         if result == 'exit':
             break
 
+        elif result == 'Undefined':
+            continue
+
         while True:
             
 
@@ -127,6 +130,8 @@ if __name__ == "__main__":
                     print('Invalid input. Please enter a valid input.')
                     continue
                 result = calculator(result, next_num)
+                if result == 'Undefined':
+                    break
                 if result == 'exit':
                     break
             elif action in ('new', '2', 'n'):
