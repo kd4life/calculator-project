@@ -127,7 +127,7 @@ if __name__ == "__main__":
                     print('Invalid input. Please enter a valid input.')
                     continue
                 result = calculator(result, next_num)
-                if result is None:
+                if result == 'exit':
                     break
             elif action in ('new', '2', 'n'):
                 break
@@ -137,7 +137,7 @@ if __name__ == "__main__":
                 print('Invalid input. Please enter a valid input.')
         print("CHECKPOINT D: inner loop ended with action =", action)
 
-        if result is None:
+        if result == 'exit':
             break
 
         if action in ('exit', '3', 'e'):
