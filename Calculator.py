@@ -110,11 +110,7 @@ if __name__ == "__main__":
         
         print(f" iF YOU WANT TO EXIT TYPE 'exit' ")
         
-        if num_1 is None or num_2 is None:
-            print('Invalid input. Please enter a valid input.')
-            continue
 
-        
         
         result = calculator(num_1, num_2)
 
