@@ -158,6 +158,7 @@ if __name__ == "__main__":
             elif action in ('exit', '3', 'e'):
                 break
             else:
+                show_current_result = True
                 print('Invalid input. Please enter a valid input.')
         
 
