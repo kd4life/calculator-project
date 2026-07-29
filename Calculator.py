@@ -24,8 +24,7 @@ def calculator(num1, num2):
         print('6, ^, exponent/power, exp/pwr')
         print('7, //, floor division, floordiv')
         print('8, m%, modulus, mod')
-        print('9, exit,e')
-        print(f"IF you want to EXIT type 'exit' or 'e' ")
+        print(f"IF you want to EXIT type '9', 'exit' or 'e' ")
 
         selection = input('choose the operation you want to perform: ').strip().lower()
 
@@ -80,20 +79,7 @@ def calculator(num1, num2):
 
         print(f'The result is: {result}')
         return result
-
-        # while True:
-        #     action = input('Do you want to use the "same" numbers, input "new" numbers or "exit"? (same/new/exit): ').strip().lower()
-        #     if action not in ('same', 'new', 'exit'):
-        #         print('Invalid input. Please choose "same", "new", or "exit".')
-        #         continue
-        #     if action == 'same':
-        #         break
-        #     if action == 'new':
-        #         return 'new'
-        #     if action == 'exit':
-        #         return 'exit'
         
-
 if __name__ == "__main__":
     
     print('Hello')
@@ -112,47 +98,52 @@ if __name__ == "__main__":
         if num_1 is None or num_2 is None:
             print('Invalid input. Please enter a valid input.')
             continue
+
+        print("CHECKPOINT A: numbers passed validation")
         
         result = calculator(num_1, num_2)
+
+        print("CHECKPOINT B: calculator returned", result)
 
         if result is None:
             break
 
-while True:
-    action = input(
-        """
-        Choose:
-        1. 'Continue with result' (r)
-        2. 'Input new numbers' (n)
-        3. 'Exit' (e)
-        Selection """
-        ).strip().lower()
-       
+        while True:
+            print("CHECKPOINT C: reached the action menu")
 
-    if action in ('result', '1', 'continue', 'r'):
-        next_num = convert_number(input("Enter the next number: "))
-      
-    if next_num is None:
-          print('Invalid input. Please enter a valid input.')
-          continue
-    
-    result = calculator(result, next_num)
+            action = input(
+                """
+                Choose:
+                1. 'Continue with result' (r)
+                2. 'Input new numbers' (n)
+                3. 'Exit' (e)
+                Selection """
+                ).strip().lower()
 
-    if result is None:
-        break
+            if action in ('result', '1', 'continue', 'r'):
+                next_num = convert_number(input("Enter the next number: "))
+              
+                if next_num is None:
+                    print('Invalid input. Please enter a valid input.')
+                    continue
+                result = calculator(result, next_num)
+                if result is None:
+                    break
+            elif action in ('new', '2', 'n'):
+                break
+            elif action in ('exit', '3', 'e'):
+                break
+            else:
+                print('Invalid input. Please enter a valid input.')
+        print("CHECKPOINT D: inner loop ended with action =", action)
 
-    elif action in ('new', '2', 'n'):
-        break
+        if result is None:
+            break
 
-    elif action in ('exit', '3', 'e'):
-        break
-
-    else:
-        print('Invalid input. Please enter a valid input.')
-
-    if result is None:
-        return exit
-
+        if action in ('exit', '3', 'e'):
+            break
+        else:
+            continue
 
 
 print('You Are Now Exiting The Program! GOODBYE!')
