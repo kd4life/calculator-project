@@ -1,7 +1,12 @@
 
 
 def convert_number(value):
-            value = value.strip().lower()
+            parts = value.strip().lower().split()
+
+            if len(parts) == 2 and parts[0] in tens and parts[1] in ones:
+                return tens[parts[0]] + ones[parts[1]]
+            if len(parts) == 1 and parts[0] in tens:
+                return tens[parts[0]]
 
             if value in word_to_num:
                 return word_to_num[value]
@@ -89,7 +94,8 @@ if __name__ == "__main__":
         
     #decimal_words = ['point', 'and','dot', 'decimal', 'fraction', 'decimal point', 'decimal fraction', 'decimal dot', 'decimal and', 'decimal and point', 'decimal and fraction', 'decimal and dot', 'decimal and decimal', 'decimal and decimal point', 'decimal and decimal fraction', 'decimal and decimal dot', 'decimal and decimal and', 'decimal and decimal and point', 'decimal and decimal and fraction', 'decimal and decimal and dot','tenths', 'hundredths', 'thousandths']
     word_to_num = {'zero': 0, 'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10, 'eleven': 11, 'twelve': 12, 'thirteen': 13, 'fourteen': 14, 'fifteen': 15, 'sixteen': 16, 'seventeen': 17, 'eighteen': 18, 'nineteen': 19}
-    
+    ones = {'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9}
+    tens = {'twenty' : 20, 'thirty' : 30,'fourty' : 40, 'fifty' : 50, 'sixty' : 60, 'seventy' : 70, 'eighty' : 80, 'ninety' : 90}
     
 
     while True:
@@ -191,5 +197,5 @@ print('You Are Now Exiting The Program! GOODBYE!')
     # add a delete option to remove a number from the list of numbers used in the operations
     # add a feature to allow the user to perform operations on a list of numbers (e.g., sum, average, etc.)
     # Learn what the user wants to do next (e.g., perform another operation, input new numbers, exit the program)
-
+    #if 2nd number input is invalid it forces user to restart the input process form the first number input and not 2nd input number
    
