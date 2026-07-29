@@ -99,17 +99,17 @@ if __name__ == "__main__":
             print('Invalid input. Please enter a valid input.')
             continue
 
-        print("CHECKPOINT A: numbers passed validation")
+        
         
         result = calculator(num_1, num_2)
 
-        print("CHECKPOINT B: calculator returned", result)
+        
 
         if result == 'exit':
             break
 
         while True:
-            print("CHECKPOINT C: reached the action menu")
+            
 
             action = input(
                 """
@@ -135,7 +135,7 @@ if __name__ == "__main__":
                 break
             else:
                 print('Invalid input. Please enter a valid input.')
-        print("CHECKPOINT D: inner loop ended with action =", action)
+        
 
         if result == 'exit':
             break
