@@ -3,10 +3,23 @@
 def convert_number(value):
             parts = value.strip().lower().split()
 
+            if len(parts) == 2 and parts[0] in neg_signs and parts[1] in word_to_num:
+                return -word_to_num[parts[1]]
+
+            if len(parts) == 2 and parts[0] in neg_signs and parts[1] in tens:
+                return -tens[parts[1]]
+
+            if len(parts) == 3 and parts[0] in neg_signs and parts[1] in tens and parts[2] in ones:
+                return -(tens[parts[1]] + ones[parts[2]])
+
             if len(parts) == 2 and parts[0] in tens and parts[1] in ones:
                 return tens[parts[0]] + ones[parts[1]]
+            
             if len(parts) == 1 and parts[0] in tens:
                 return tens[parts[0]]
+
+           
+                
 
             if value in word_to_num:
                 return word_to_num[value]
@@ -94,6 +107,7 @@ if __name__ == "__main__":
         
     #decimal_words = ['point', 'and','dot', 'decimal', 'fraction', 'decimal point', 'decimal fraction', 'decimal dot', 'decimal and', 'decimal and point', 'decimal and fraction', 'decimal and dot', 'decimal and decimal', 'decimal and decimal point', 'decimal and decimal fraction', 'decimal and decimal dot', 'decimal and decimal and', 'decimal and decimal and point', 'decimal and decimal and fraction', 'decimal and decimal and dot','tenths', 'hundredths', 'thousandths']
     word_to_num = {'zero': 0, 'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10, 'eleven': 11, 'twelve': 12, 'thirteen': 13, 'fourteen': 14, 'fifteen': 15, 'sixteen': 16, 'seventeen': 17, 'eighteen': 18, 'nineteen': 19}
+    neg_signs = {'minus' : '-', 'negative' : '-'}    
     ones = {'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9}
     tens = {'twenty' : 20, 'thirty' : 30,'fourty' : 40, 'fifty' : 50, 'sixty' : 60, 'seventy' : 70, 'eighty' : 80, 'ninety' : 90}
     
