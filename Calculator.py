@@ -1,7 +1,9 @@
 
 
 def convert_number(value):
-            parts = value.strip().lower().split()
+
+            value = value.strip().lower()
+            parts = value.split()
 
             if len(parts) == 2 and parts[0] in neg_signs and parts[1] in word_to_num:
                 return -word_to_num[parts[1]]
@@ -18,8 +20,6 @@ def convert_number(value):
             if len(parts) == 1 and parts[0] in tens:
                 return tens[parts[0]]
 
-           
-                
 
             if value in word_to_num:
                 return word_to_num[value]
