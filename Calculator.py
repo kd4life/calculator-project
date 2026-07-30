@@ -5,14 +5,13 @@ def convert_number(value):
             value = value.strip().lower()
             parts = value.split()
 
-            if len(parts) == 2 and parts[0] in neg_signs and parts[1] in word_to_num:
-                return -word_to_num[parts[1]]
+            if len(parts) != 0 and parts[0] in neg_signs:
+                converted_value = convert_number(" ".join(parts[1:]))
+                if converted_value is None:
+                    return None
 
-            if len(parts) == 2 and parts[0] in neg_signs and parts[1] in tens:
-                return -tens[parts[1]]
+                return -converted_value
 
-            if len(parts) == 3 and parts[0] in neg_signs and parts[1] in tens and parts[2] in ones:
-                return -(tens[parts[1]] + ones[parts[2]])
 
             if len(parts) == 2 and parts[0] in tens and parts[1] in ones:
                 return tens[parts[0]] + ones[parts[1]]
